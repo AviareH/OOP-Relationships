@@ -36,10 +36,7 @@ public class Employee {
     public void setHourlySalary(double hourlySalary){
         this.hourlySalary = hourlySalary;
     }
-    public void setWorkHours(){
-        // this works in theory, however cannot be demonstrated as I don't want to wait hours
-        workHours = startTime.until(endTime, MINUTES);
-    }
+    public void setWorkHours(double workHours) {this.workHours = workHours;}
     public void setSickDays(int sickDays){
         this.sickDays = sickDays;
     }
@@ -61,12 +58,5 @@ public class Employee {
 
     public double calculatePay(){
         return hourlySalary*workHours;
-    }
-
-    public void clockIn(){
-        startTime = java.time.LocalTime.now();
-    }
-    public void clockOut(){
-        endTime = java.time.LocalTime.now();
     }
 }
